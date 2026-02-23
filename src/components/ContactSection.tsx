@@ -31,26 +31,26 @@ const ContactSection = () => {
                         <form className="space-y-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 <div className="relative group">
-                                    <input type="text" className="w-full bg-transparent border-b border-brand-brown/10 py-4 focus:outline-none focus:border-brand-brown transition-all text-sm font-medium placeholder:text-brand-espresso/20" placeholder="FULL NAME" />
+                                    <input type="text" className="w-full bg-transparent border-b border-brand-brown/20 py-4 focus:outline-none focus:border-brand-brown transition-all text-sm font-medium text-black placeholder:text-black/40" placeholder="FULL NAME" />
                                 </div>
                                 <div className="relative group">
-                                    <input type="email" className="w-full bg-transparent border-b border-brand-brown/10 py-4 focus:outline-none focus:border-brand-brown transition-all text-sm font-medium placeholder:text-brand-espresso/20" placeholder="EMAIL ADDRESS" />
+                                    <input type="email" className="w-full bg-transparent border-b border-brand-brown/20 py-4 focus:outline-none focus:border-brand-brown transition-all text-sm font-medium text-black placeholder:text-black/40" placeholder="EMAIL ADDRESS" />
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 <div>
-                                    <select className="w-full bg-transparent border-b border-brand-brown/10 py-4 focus:outline-none focus:border-brand-brown transition-all text-[11px] tracking-widest uppercase font-semibold text-brand-espresso/60 cursor-pointer">
+                                    <select className="w-full bg-transparent border-b border-brand-brown/20 py-4 focus:outline-none focus:border-brand-brown transition-all text-[11px] tracking-widest uppercase font-semibold text-black/70 cursor-pointer">
                                         <option>Corporate Gifting</option>
                                         <option>Wedding & Festive</option>
                                         <option>Personalized Hamper</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <input type="text" className="w-full bg-transparent border-b border-brand-brown/10 py-4 focus:outline-none focus:border-brand-brown transition-all text-sm font-medium placeholder:text-brand-espresso/20" placeholder="EXPECTED QUANTITY" />
+                                    <input type="text" className="w-full bg-transparent border-b border-brand-brown/20 py-4 focus:outline-none focus:border-brand-brown transition-all text-sm font-medium text-black placeholder:text-black/40" placeholder="EXPECTED QUANTITY" />
                                 </div>
                             </div>
                             <div>
-                                <textarea rows={4} className="w-full bg-transparent border-b border-brand-brown/10 py-4 focus:outline-none focus:border-brand-brown transition-all text-sm font-medium resize-none placeholder:text-brand-espresso/20" placeholder="TELL US MORE ABOUT YOUR REQUIREMENTS"></textarea>
+                                <textarea rows={4} className="w-full bg-transparent border-b border-brand-brown/20 py-4 focus:outline-none focus:border-brand-brown transition-all text-sm font-medium text-black resize-none placeholder:text-black/40" placeholder="TELL US MORE ABOUT YOUR REQUIREMENTS"></textarea>
                             </div>
                             <button className="px-12 py-5 bg-brand-brown text-white text-[11px] tracking-[0.3em] font-bold uppercase rounded-sm hover:bg-brand-copper transition-all duration-500 shadow-xl">
                                 Send Enquiry

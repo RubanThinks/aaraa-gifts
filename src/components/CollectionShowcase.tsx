@@ -8,25 +8,21 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 const collections = [
     {
         title: "The Royal Box",
-        price: "Starting ₹4,500",
         img: "/assets/images/products/wedding/wed5.jpg",
         tag: "Bestseller"
     },
     {
         title: "Midnight Elegance",
-        price: "Starting ₹3,200",
         img: "/assets/images/products/wedding/wed3.jpg",
         tag: "Limited"
     },
     {
         title: "Ivory Dreams",
-        price: "Starting ₹5,800",
         img: "/assets/images/insta/insta1.jpg",
         tag: "Premium"
     },
     {
         title: "Golden Heritage",
-        price: "Starting ₹7,500",
         img: "/assets/images/insta/insta3.jpg",
         tag: "New"
     },
@@ -74,6 +70,7 @@ const CollectionShowcase = () => {
                                     src={item.img}
                                     alt={item.title}
                                     fill
+                                    priority={i === 0}
                                     className="object-cover transition-transform duration-[2s] group-hover:scale-110"
                                     unoptimized
                                 />
@@ -88,7 +85,6 @@ const CollectionShowcase = () => {
                             <div className="text-center px-4">
                                 <div className="h-[1px] w-8 bg-brand-gold/30 mx-auto mb-6 group-hover:w-20 transition-all duration-700" />
                                 <h3 className="text-2xl font-serif text-brand-maroon mb-3 tracking-tight group-hover:text-brand-gold transition-colors">{item.title}</h3>
-                                <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-brand-espresso/40 mb-2">{item.price}</p>
                             </div>
                         </motion.div>
                     ))}
@@ -99,4 +95,3 @@ const CollectionShowcase = () => {
 };
 
 export default CollectionShowcase;
-

@@ -5,17 +5,22 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
+import { ShoppingBag, ChevronRight } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
 
 const weddingProducts = [
-    { title: "The Royal Brass Chest", price: "Starting ₹8,500", img: "/assets/images/products/wedding/wed1.jpg" },
-    { title: "Silver Inlay Thali Set", price: "Starting ₹12,000", img: "/assets/images/products/wedding/wed3.jpg" },
-    { title: "Moroccan Tea Lantern Suite", price: "Starting ₹6,200", img: "/assets/images/products/wedding/wed4.jpg" },
-    { title: "Zardozi Handcrafted Pouch", price: "Starting ₹2,500", img: "/assets/images/products/wedding/wed5.jpg" },
-    { title: "Heritage Sweet Box", price: "Starting ₹1,800", img: "/assets/images/products/wedding/wed6.jpg" },
-    { title: "Copper Hammered Tumblers", price: "Starting ₹3,200", img: "/assets/images/categories/wedding.jpg" },
+    { id: "wed-1", title: "The Royal Brass Chest", img: "/assets/images/products/wedding/wed1.jpg" },
+    { id: "wed-2", title: "Silver Inlay Thali Set", img: "/assets/images/products/wedding/wed3.jpg" },
+    { id: "wed-3", title: "Moroccan Tea Lantern Suite", img: "/assets/images/products/wedding/wed4.jpg" },
+    { id: "wed-4", title: "Zardozi Handcrafted Pouch", img: "/assets/images/products/wedding/wed5.jpg" },
+    { id: "wed-5", title: "Heritage Sweet Box", img: "/assets/images/products/wedding/wed6.jpg" },
+    { id: "wed-6", title: "Copper Hammered Tumblers", img: "/assets/images/categories/wedding.jpg" },
 ];
 
 export default function WeddingPage() {
+    const { addToCart } = useCart();
+
     return (
         <main className="bg-brand-ivory min-h-screen">
             <Navbar />
@@ -32,28 +37,46 @@ export default function WeddingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
                     {weddingProducts.map((product, i) => (
                         <motion.div
-                            key={i}
+                            key={product.id}
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: i * 0.1, ease: "easeOut" }}
                             viewport={{ once: true }}
                             className="group"
                         >
-                            <div className="relative aspect-square overflow-hidden mb-10 bg-white border border-brand-brown/5">
-                                <Image
-                                    src={product.img}
-                                    alt={product.title}
-                                    fill
-                                    className="object-cover transition-transform duration-[2s] group-hover:scale-110"
-                                    unoptimized
-                                />
-                                <div className="absolute inset-x-0 bottom-0 p-8 glass-brown translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                                    <p className="text-[10px] uppercase tracking-widest text-brand-brown font-bold mb-2">Request Catalog</p>
-                                    <h4 className="text-xl font-serif text-brand-espresso">Bulk Order Inquiries</h4>
+                            <div className="relative aspect-square overflow-hidden mb-10 bg-white border border-brand-brown/5 shadow-sm group-hover:shadow-2xl transition-all duration-1000">
+                                <Link href={`/products/${product.id}`}>
+                                    <Image
+                                        src={product.img}
+                                        alt={product.title}
+                                        fill
+                                        className="object-cover transition-transform duration-[2s] group-hover:scale-110"
+                                        unoptimized
+                                    />
+                                </Link>
+                                <div className="absolute inset-x-0 bottom-0 p-8 glass-brown translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col items-center gap-3">
+                                    <Link
+                                        href={`/products/${product.id}`}
+                                        className="w-full py-4 bg-white/90 backdrop-blur-sm text-brand-brown text-[10px] uppercase font-bold tracking-widest hover:bg-white transition-colors flex items-center justify-center gap-2"
+                                    >
+                                        View Details <ChevronRight size={14} />
+                                    </Link>
+                                    <button
+                                        onClick={() => addToCart({
+                                            id: product.id,
+                                            title: product.title,
+                                            img: product.img
+                                        })}
+                                        className="w-full py-4 bg-brand-maroon text-white text-[10px] uppercase font-bold tracking-widest hover:bg-brand-brown transition-colors flex items-center justify-center gap-3 shadow-xl"
+                                    >
+                                        <ShoppingBag size={14} />
+                                        Add to Hamper
+                                    </button>
                                 </div>
                             </div>
-                            <h3 className="text-3xl font-serif text-brand-espresso mb-3 tracking-tight">{product.title}</h3>
-                            <p className="text-brand-copper italic text-base">{product.price}</p>
+                            <Link href={`/products/${product.id}`}>
+                                <h3 className="text-3xl font-serif text-brand-brown mb-3 tracking-tight group-hover:text-brand-maroon transition-colors">{product.title}</h3>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

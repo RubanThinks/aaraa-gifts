@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./Providers";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Aara Gifts | Premium Gift Store & Custom Gifting Studio",
+  title: "Aaraa Gifts | Premium Gift Store & Custom Gifting Studio",
   description: "Bespoke gift collections and premium custom gifting solutions curated with elegance. Discover luxury gifting for corporate and personal occasions.",
 };
 
@@ -26,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
-        <div className="noise-overlay" />
-        {children}
+        <Providers>
+          <div className="noise-overlay" />
+          {children}
+        </Providers>
       </body>
     </html>
   );

@@ -5,15 +5,15 @@ import TrustSections from "@/components/TrustSections";
 
 export default function AboutPage() {
     return (
-        <main className="relative bg-brand-ivory min-h-screen pt-40">
+        <main className="relative bg-brand-ivory min-h-screen">
             <Navbar />
             <div className="container mx-auto px-6 py-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
                     <div>
                         <span className="text-xs uppercase tracking-[0.5em] text-brand-brown font-bold mb-6 block">Our Legacy</span>
-                        <h1 className="text-5xl md:text-8xl font-serif text-brand-brown mb-12 leading-[0.95]">The Aara <br /> <span className="italic text-brand-copper">Philosophy.</span></h1>
+                        <h1 className="text-5xl md:text-8xl font-serif text-brand-brown mb-12 leading-[0.95]">The Aaraa <br /> <span className="italic text-brand-copper">Philosophy.</span></h1>
                         <p className="text-brand-espresso/60 text-lg md:text-xl font-light leading-relaxed mb-8">
-                            Born from a passion for exquisite detailing and the age-old tradition of gift-giving, Aara is a modern sanctuary for those who seek to leave a lasting impression. We view gifting not as a transaction, but as a bridge between souls.
+                            Born from a passion for exquisite detailing and the age-old tradition of gift-giving, Aaraa is a modern sanctuary for those who seek to leave a lasting impression. We view gifting not as a transaction, but as a bridge between souls.
                         </p>
                         <p className="text-brand-espresso/60 text-lg font-light leading-relaxed italic mb-12">
                             "We believe that a gift is a physical manifestation of a relationship—a moment in time captured in a box."
@@ -22,7 +22,7 @@ export default function AboutPage() {
                         <div className="grid grid-cols-2 gap-12 border-t border-brand-brown/10 pt-12">
                             <div>
                                 <h4 className="text-2xl font-serif text-brand-brown mb-4">Artisanal Roots</h4>
-                                <p className="text-brand-espresso/50 text-sm font-light">Every Aara box begins as a drawing, crafted with materials that tell a story of heritage and quality.</p>
+                                <p className="text-brand-espresso/50 text-sm font-light">Every Aaraa box begins as a drawing, crafted with materials that tell a story of heritage and quality.</p>
                             </div>
                             <div>
                                 <h4 className="text-2xl font-serif text-brand-brown mb-4">Precision Craft</h4>
@@ -32,8 +32,8 @@ export default function AboutPage() {
                     </div>
                     <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl group">
                         <img
-                            src="/assets/images/collections/royal.jpg"
-                            alt="The Aara Studio"
+                            src="/assets/images/hero/luxury.jpg"
+                            alt="The Aaraa Studio"
                             className="object-cover w-full h-full transition-transform duration-[3s] group-hover:scale-110"
                         />
                         {/* Removed darkening overlay for clarity */}
@@ -71,7 +71,7 @@ export default function AboutPage() {
                                 <div>
                                     <h3 className="text-2xl font-serif text-brand-brown mb-4">Olfactory Integration</h3>
                                     <p className="text-brand-espresso/60 font-light leading-relaxed">
-                                        Aara gifts engage all senses. Subtle woody scents from sandalwood shavings or custom-infused linens ensure that the unboxing experience begins with a calming, sophisticated olfactory cue.
+                                        Aaraa gifts engage all senses. Subtle woody scents from sandalwood shavings or custom-infused linens ensure that the unboxing experience begins with a calming, sophisticated olfactory cue.
                                     </p>
                                 </div>
                             </div>

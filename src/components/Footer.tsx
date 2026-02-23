@@ -15,7 +15,7 @@ const Footer = () => {
                             <Link href="/" className="relative h-[60px] w-[140px] mb-3 block">
                                 <img
                                     src="/aaraa-logo-transparent.png"
-                                    alt="Aara Gifting"
+                                    alt="Aaraa Gifting"
                                     className="object-contain h-full w-full"
                                 />
                             </Link>
@@ -68,7 +68,7 @@ const Footer = () => {
 
                 <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-white/20 text-[10px] uppercase tracking-[0.5em] font-bold">
-                        © Aara Gifts {new Date().getFullYear()}. Crafted for impressions.
+                        © Aaraa Gifts {new Date().getFullYear()}. Crafted for impressions.
                     </p>
                     <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-white/20 font-bold">
                         <span className="hover:text-brand-copper cursor-pointer transition-colors">Privacy</span>

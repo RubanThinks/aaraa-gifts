@@ -4,7 +4,7 @@ import ContactSection from "@/components/ContactSection";
 
 export default function ContactPage() {
     return (
-        <main className="relative bg-brand-ivory min-h-screen pt-40">
+        <main className="relative bg-brand-ivory min-h-screen">
             <Navbar />
             <div className="container mx-auto px-6 py-20 text-center">
                 <h1 className="text-5xl md:text-7xl font-serif text-brand-emerald mb-8">Get in Touch</h1>

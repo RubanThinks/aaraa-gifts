@@ -51,7 +51,7 @@ const TechnicalDetails = () => {
                     <span className="text-[10px] uppercase tracking-[0.6em] text-brand-copper font-bold mb-6 block">Technical Excellence</span>
                     <h2 className="text-5xl md:text-8xl font-serif mb-12 leading-[0.95] tracking-tight">The Science <br /> <span className="italic text-brand-copper">of Perfection.</span></h2>
                     <p className="text-white/40 text-xl font-light leading-relaxed max-w-2xl">
-                        At Aara, we bridge the gap between artisanal beauty and technical engineering. Every gift is a result of balanced weightages and precise material science.
+                        At Aaraa, we bridge the gap between artisanal beauty and technical engineering. Every gift is a result of balanced weightages and precise material science.
                     </p>
                 </div>
 

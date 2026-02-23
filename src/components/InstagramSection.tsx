@@ -46,7 +46,7 @@ const InstagramSection = () => {
                         >
                             <Image
                                 src={img}
-                                alt="Aara Gifting Instance"
+                                alt="Aaraa Gifting Instance"
                                 fill
                                 className="object-cover transition-all duration-1000 group-hover:scale-110"
                                 unoptimized
