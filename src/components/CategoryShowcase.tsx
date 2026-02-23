@@ -24,7 +24,7 @@ const categories = [
     {
         title: "Corporate Studio",
         desc: "Bespoke branded masterpieces for volume solutions.",
-        img: "/assets/images/products/wedding/wed6.jpg",
+        img: "/assets/images/corporate/handbook&pen1.jpeg",
         href: "/corporate",
         span: "lg:col-span-1 lg:row-span-1"
     },

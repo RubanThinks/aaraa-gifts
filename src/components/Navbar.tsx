@@ -39,7 +39,7 @@ const Navbar = () => {
         {
             name: "CORPORATE STUDIO",
             href: "/corporate",
-            sublinks: ["Executive Desktop", "Eco-Friendly Kits", "Premium Tech Gifts", "Branding Options"]
+            sublinks: ["Gift Combos", "Handbook & Pen Sets", "Premium Pens", "Flasks & Bags"]
         },
         { name: "OUR STORY", href: "/about" },
         { name: "CONTACT", href: "/contact" },

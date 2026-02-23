@@ -13,7 +13,7 @@ const quickCategories = [
     },
     {
         name: "Corporate Gifts",
-        img: "/assets/images/products/womens/w5.jpg",
+        img: "/assets/images/corporate/combo2.jpeg",
         href: "/corporate"
     },
     {

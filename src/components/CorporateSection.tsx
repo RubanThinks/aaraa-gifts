@@ -4,17 +4,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Users, Laptop, Coffee } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const features = [
     {
         icon: <Briefcase className="w-5 h-5" />,
         title: "Custom Branding",
-        desc: "Integrated logos, color-matched ribbons, and custom greeting cards."
+        desc: "Logo engraving, screen printing & embossing on every product."
     },
     {
         icon: <Users className="w-5 h-5" />,
         title: "Large Scale Execution",
-        desc: "Capacity to handle volume orders with consistent artisanal quality."
+        desc: "Volume orders with consistent artisanal quality."
     },
     {
         icon: <Laptop className="w-5 h-5" />,
@@ -24,61 +25,81 @@ const features = [
     {
         icon: <Coffee className="w-5 h-5" />,
         title: "Event Gifting",
-        desc: "Curated hampers for conferences, launches, and corporate retreats."
+        desc: "Curated hampers for conferences, launches, and retreats."
     }
+];
+
+const showcaseImages = [
+    { src: "/assets/images/corporate/combo1.jpeg", alt: "Gift Combo Set" },
+    { src: "/assets/images/corporate/handbook&pen7.jpeg", alt: "Handbook & Pen Set" },
+    { src: "/assets/images/corporate/pen2.jpeg", alt: "Premium Pen" },
+    { src: "/assets/images/corporate/flask1.jpeg", alt: "Insulated Flask" },
 ];
 
 const CorporateSection = () => {
     return (
-        <section className="py-40 bg-brand-ivory">
+        <section className="py-32 bg-brand-ivory">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    {/* Image Grid */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1.2 }}
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
                         viewport={{ once: true }}
-                        className="relative aspect-square lg:aspect-auto lg:h-[80vh] rounded-3xl overflow-hidden"
+                        className="grid grid-cols-2 gap-3"
                     >
-                        <Image
-                            src="/assets/images/insta/insta6.jpg"
-                            alt="Corporate Gifting Service"
-                            fill
-                            className="object-cover"
-                            unoptimized
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="glass p-12 rounded-3xl text-center max-w-sm">
-                                <h3 className="text-3xl font-serif text-brand-brown mb-4">Elevate Your Brand</h3>
-                                <p className="text-brand-espresso/60 text-sm font-light">Join 500+ companies that trust Aara for their gifting needs.</p>
+                        {showcaseImages.map((img, i) => (
+                            <div
+                                key={i}
+                                className={`relative overflow-hidden rounded-xl group ${i === 0 ? 'aspect-[4/5]' : i === 3 ? 'aspect-[4/5]' : 'aspect-square'
+                                    } ${i === 1 ? 'mt-8' : ''} ${i === 2 ? '-mt-4' : ''}`}
+                            >
+                                <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    unoptimized
+                                />
+                                <div className="absolute inset-0 bg-brand-maroon/0 group-hover:bg-brand-maroon/10 transition-all duration-500" />
                             </div>
-                        </div>
+                        ))}
                     </motion.div>
 
+                    {/* Content */}
                     <div>
                         <span className="text-[10px] uppercase tracking-[0.4em] text-brand-copper font-bold mb-6 block">Corporate Excellence</span>
-                        <h2 className="text-5xl md:text-7xl font-serif text-brand-brown mb-12 leading-tight">Partners in <br /><span className="italic text-brand-copper">Memorable</span> Impressions</h2>
+                        <h2 className="text-5xl md:text-7xl font-serif text-brand-brown mb-10 leading-tight">Partners in <br /><span className="italic text-brand-copper">Memorable</span> Impressions</h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-14">
                             {features.map((f, i) => (
                                 <div key={i} className="group">
-                                    <div className="text-brand-copper mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <div className="text-brand-copper mb-4 group-hover:scale-110 transition-transform duration-300">
                                         {f.icon}
                                     </div>
-                                    <h4 className="text-xl font-serif text-brand-brown mb-3 uppercase tracking-wider">{f.title}</h4>
-                                    <p className="text-brand-espresso/40 text-sm leading-relaxed font-light">{f.desc}</p>
+                                    <h4 className="text-base font-serif text-brand-brown mb-2 uppercase tracking-wider">{f.title}</h4>
+                                    <p className="text-brand-espresso/40 text-xs leading-relaxed font-light">{f.desc}</p>
                                 </div>
                             ))}
                         </div>
 
-                        <a
-                            href="/aaraa-catalogue.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-12 py-5 bg-brand-brown text-white text-[11px] tracking-[0.3em] font-bold uppercase rounded-sm hover:bg-brand-copper transition-all duration-500 inline-block"
-                        >
-                            Download Catalogue
-                        </a>
+                        <div className="flex flex-wrap gap-4">
+                            <Link
+                                href="/corporate"
+                                className="px-10 py-4 bg-brand-maroon text-white text-[10px] tracking-[0.3em] font-bold uppercase hover:bg-brand-copper transition-all duration-500 inline-block"
+                            >
+                                Explore Collection
+                            </Link>
+                            <a
+                                href="/aaraa-catalogue.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-10 py-4 border border-brand-brown/20 text-brand-brown text-[10px] tracking-[0.3em] font-bold uppercase hover:bg-brand-brown hover:text-white transition-all duration-500 inline-block"
+                            >
+                                Download Catalogue
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
