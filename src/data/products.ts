@@ -212,4 +212,56 @@ export const allProducts: Product[] = [
         href: "/collections/apparel",
         tag: "Minimalist"
     },
+
+    // Award Gifts
+    {
+        id: "award-1",
+        title: "The Artisan Laurel Wooden Medal",
+        subtitle: "Handcrafted Personal Tribute",
+        description: "A handcrafted tribute to life's true champions. Meticulously carved from premium compressed wood and finished with a vibrant ceremonial ribbon, this medal serves as a timeless token of appreciation for those who inspire us daily.",
+        img: "/assets/images/awards/wooden-medal.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Handcrafted"
+    },
+    {
+        id: "award-2",
+        title: "The Stellar Visionary Chrome Trophy",
+        subtitle: "Fluid Chrome & Crystal Masterpiece",
+        description: "An exquisite fusion of fluid chrome sculpture and precision-cut crystal. This trophy embodies the pursuit of excellence and the weight of global leadership, standing as a prestigious monument to extraordinary achievement.",
+        img: "/assets/images/awards/chrome-trophy.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Luxury Series"
+    },
+    {
+        id: "award-3",
+        title: "The Obsidian Star Executive Award",
+        subtitle: "Midnight Star Plaque",
+        description: "A sophisticated blend of natural wood grain and sleek obsidian accents. Featuring a raised geometric star and crisp precision engraving, this plaque is designed to honor the strategic brilliance of top-tier performers.",
+        img: "/assets/images/awards/wooden-star-award.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Executive"
+    },
+    {
+        id: "award-4",
+        title: "The Dynamic Vanguard Sports Tribute",
+        subtitle: "Multi-Layered 3D Accolade",
+        description: "A high-impact, multi-layered masterpiece that captures the kinetic energy of athletic prowess. Featuring bold 3D typography and a precision-cut silhouette, it immortalizes the grit and glory of every champion.",
+        img: "/assets/images/awards/sports-3d-award.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Custom Series"
+    },
+    {
+        id: "award-5",
+        title: "The Virtuoso Glass Guitar Trophy",
+        subtitle: "Melodic Crystal Tribute",
+        description: "A harmonious blend of crystal-clear acrylic and warm solid wood. This bespoke tribute captures the soul of melody, making it the perfect accolade for those whose talent resonates long after the final note.",
+        img: "/assets/images/awards/guitar-award.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Artistic"
+    },
 ];
