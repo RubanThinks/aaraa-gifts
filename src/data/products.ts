@@ -182,4 +182,34 @@ export const allProducts: Product[] = [
         href: "/collections/apparel",
         tag: "Technical Edition"
     },
+    {
+        id: "app-6",
+        title: "The Ukiyo-e Feline Zen Pullover",
+        subtitle: "Artisan Japanese Illustration",
+        description: "A meditative blend of traditional Japanese aesthetic and modern comfort. This heavy-gauge pullover features a masterfully rendered feline monk in the Ukiyo-e style, celebrating the art of the perfect brew and the spirit of tranquility.",
+        img: "/assets/images/apparel/beige-cat-tea-pullover.jpg",
+        category: "Apparel & T-Shirts",
+        href: "/collections/apparel",
+        tag: "Artisan Series"
+    },
+    {
+        id: "app-7",
+        title: "The Blueprint Plumber's Tribute",
+        subtitle: "Technical Pop-Icon Schematic",
+        description: "A sophisticated deconstruction of a gaming legend. This premium onyx tee showcases the technical blueprint and vibrant character geometry of the world's most cherished hero, blending nostalgia with high-street technical design.",
+        img: "/assets/images/apparel/black-mario-blueprint-tee.jpg",
+        category: "Apparel & T-Shirts",
+        href: "/collections/apparel",
+        tag: "Iconic Series"
+    },
+    {
+        id: "app-8",
+        title: "The Wayfarer Calico Pullover",
+        subtitle: "Minimalist Traveler Series",
+        description: "An endearing tribute to the spirit of petite adventures. Featuring a minimalist calico voyager on a rich forest-olive canvas, this pullover is crafted from French Terry cotton for supreme softness during your own journeys.",
+        img: "/assets/images/apparel/olive-backpack-cat-pullover.jpg",
+        category: "Apparel & T-Shirts",
+        href: "/collections/apparel",
+        tag: "Minimalist"
+    },
 ];
