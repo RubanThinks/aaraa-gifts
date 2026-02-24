@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
-import { ArrowRight, Briefcase, Users, Laptop, Coffee, ChevronRight, ShoppingBag } from 'lucide-react';
+import { ArrowRight, Briefcase, Users, Laptop, Coffee, ChevronRight, ShoppingBag, Check } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 const categories = [
@@ -50,11 +50,22 @@ const features = [
 
 export default function CorporatePage() {
     const [activeFilter, setActiveFilter] = useState("all");
+    const [addedId, setAddedId] = useState<string | null>(null);
     const { addToCart } = useCart();
 
     const filteredProducts = activeFilter === "all"
         ? products
         : products.filter(p => p.category === activeFilter);
+
+    const handleAddToCart = (product: any) => {
+        addToCart({
+            id: product.id,
+            title: product.title,
+            img: product.img
+        });
+        setAddedId(product.id);
+        setTimeout(() => setAddedId(null), 2000);
+    };
 
     return (
         <main className="relative bg-brand-ivory min-h-screen">
@@ -225,15 +236,13 @@ export default function CorporatePage() {
                                         <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
-                                                addToCart({
-                                                    id: product.id,
-                                                    title: product.title,
-                                                    img: product.img
-                                                });
+                                                handleAddToCart(product);
                                             }}
-                                            className="p-2 bg-brand-maroon/5 text-brand-maroon rounded-full hover:bg-brand-maroon hover:text-white transition-all transform hover:scale-110 shadow-sm"
+                                            className={`p-2 rounded-full transition-all transform hover:scale-110 shadow-sm ${addedId === product.id
+                                                ? "bg-brand-gold text-white"
+                                                : "bg-brand-maroon/5 text-brand-maroon hover:bg-brand-maroon hover:text-white"}`}
                                         >
-                                            <ShoppingBag size={14} />
+                                            {addedId === product.id ? <Check size={14} /> : <ShoppingBag size={14} />}
                                         </button>
                                     </div>
                                 </motion.div>

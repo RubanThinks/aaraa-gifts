@@ -13,6 +13,7 @@ interface CartContextType {
     cart: CartItem[];
     addToCart: (item: Omit<CartItem, 'quantity'>) => void;
     removeFromCart: (id: string) => void;
+    decreaseQuantity: (id: string) => void;
     clearCart: () => void;
     cartCount: number;
     isCartOpen: boolean;
@@ -50,11 +51,20 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
             }
             return [...prev, { ...item, quantity: 1 }];
         });
-        setIsCartOpen(true); // Open cart when item added
     };
 
     const removeFromCart = (id: string) => {
         setCart(prev => prev.filter(i => i.id !== id));
+    };
+
+    const decreaseQuantity = (id: string) => {
+        setCart(prev => {
+            const existing = prev.find(i => i.id === id);
+            if (existing && existing.quantity > 1) {
+                return prev.map(i => i.id === id ? { ...i, quantity: i.quantity - 1 } : i);
+            }
+            return prev.filter(i => i.id !== id);
+        });
     };
 
     const clearCart = () => setCart([]);
@@ -62,7 +72,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, cartCount, isCartOpen, setIsCartOpen }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, decreaseQuantity, clearCart, cartCount, isCartOpen, setIsCartOpen }}>
             {children}
         </CartContext.Provider>
     );

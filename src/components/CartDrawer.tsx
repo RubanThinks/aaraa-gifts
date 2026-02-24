@@ -2,13 +2,23 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ShoppingBag, Plus, Minus, Trash2, ArrowRight } from 'lucide-react';
+import { X, ShoppingBag, Plus, Minus, Trash2, MessageCircle } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const CartDrawer = () => {
-    const { isCartOpen, setIsCartOpen, cart, removeFromCart, addToCart, cartCount, clearCart } = useCart();
+    const { isCartOpen, setIsCartOpen, cart, removeFromCart, addToCart, decreaseQuantity, cartCount } = useCart();
+
+    const handleWhatsAppEnquiry = () => {
+        if (cart.length === 0) return;
+
+        const productList = cart.map(item => `- ${item.title} (Qty: ${item.quantity})`).join('\n');
+        const message = `Hello Aaraa Gifting! I would like to enquire about the following items in my hamper:\n\n${productList}\n\nTotal Items: ${cartCount}\n\nPlease let me know the details and process.`;
+
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/919940173007?text=${encodedMessage}`, '_blank');
+        setIsCartOpen(false);
+    };
 
     return (
         <AnimatePresence>
@@ -75,9 +85,7 @@ const CartDrawer = () => {
                                             <div className="flex items-center justify-between">
                                                 <div className="flex items-center border border-brand-brown/10 rounded-full px-3 py-1 bg-brand-ivory">
                                                     <button
-                                                        onClick={() => {
-                                                            // Logic to reduce quantity (could add a generic updateQuantity method)
-                                                        }}
+                                                        onClick={() => decreaseQuantity(item.id)}
                                                         className="text-brand-brown/40 hover:text-brand-brown transition-colors p-1"
                                                     >
                                                         <Minus size={12} />
@@ -115,14 +123,13 @@ const CartDrawer = () => {
                         {cart.length > 0 && (
                             <div className="p-8 bg-brand-ivory border-t border-brand-gold/10">
                                 <div className="grid grid-cols-1 gap-4">
-                                    <Link
-                                        href="/contact"
-                                        onClick={() => setIsCartOpen(false)}
-                                        className="w-full bg-brand-brown text-white py-5 rounded-sm text-[11px] font-bold uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-brand-maroon transition-all shadow-2xl group"
+                                    <button
+                                        onClick={handleWhatsAppEnquiry}
+                                        className="w-full bg-[#25D366] text-white py-5 rounded-sm text-[11px] font-bold uppercase tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-[#128C7E] transition-all shadow-2xl group"
                                     >
-                                        Proceed to Enquiry
-                                        <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
-                                    </Link>
+                                        Enquire on WhatsApp
+                                        <MessageCircle size={18} className="group-hover:scale-110 transition-transform" />
+                                    </button>
                                     <button
                                         onClick={() => setIsCartOpen(false)}
                                         className="w-full py-4 text-[10px] font-bold text-brand-brown/40 uppercase tracking-widest hover:text-brand-brown transition-colors"

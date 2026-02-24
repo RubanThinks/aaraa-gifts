@@ -1,12 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShoppingBag, ChevronRight } from 'lucide-react';
+import { ShoppingBag, ChevronRight, Check } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 
 const weddingProducts = [
@@ -20,6 +20,17 @@ const weddingProducts = [
 
 export default function WeddingPage() {
     const { addToCart } = useCart();
+    const [addedId, setAddedId] = useState<string | null>(null);
+
+    const handleAddToCart = (product: any) => {
+        addToCart({
+            id: product.id,
+            title: product.title,
+            img: product.img
+        });
+        setAddedId(product.id);
+        setTimeout(() => setAddedId(null), 2000);
+    };
 
     return (
         <main className="bg-brand-ivory min-h-screen">
@@ -62,15 +73,22 @@ export default function WeddingPage() {
                                         View Details <ChevronRight size={14} />
                                     </Link>
                                     <button
-                                        onClick={() => addToCart({
-                                            id: product.id,
-                                            title: product.title,
-                                            img: product.img
-                                        })}
-                                        className="w-full py-4 bg-brand-maroon text-white text-[10px] uppercase font-bold tracking-widest hover:bg-brand-brown transition-colors flex items-center justify-center gap-3 shadow-xl"
+                                        onClick={() => handleAddToCart(product)}
+                                        className={`w-full py-4 text-[10px] uppercase font-bold tracking-widest transition-all flex items-center justify-center gap-3 shadow-xl ${addedId === product.id
+                                            ? "bg-brand-gold text-white"
+                                            : "bg-brand-maroon text-white hover:bg-brand-brown"}`}
                                     >
-                                        <ShoppingBag size={14} />
-                                        Add to Hamper
+                                        {addedId === product.id ? (
+                                            <>
+                                                <Check size={14} />
+                                                In Hamper
+                                            </>
+                                        ) : (
+                                            <>
+                                                <ShoppingBag size={14} />
+                                                Add to Hamper
+                                            </>
+                                        )}
                                     </button>
                                 </div>
                             </div>
