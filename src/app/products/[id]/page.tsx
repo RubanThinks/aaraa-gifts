@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { ShoppingBag, MessageCircle, Send, ChevronRight, Check, ArrowLeft, Heart, Share2 } from 'lucide-react';
+import { ShoppingBag, MessageCircle, Send, ChevronRight, Check, ArrowLeft } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { allProducts, Product } from '@/data/products';
 import Link from 'next/link';
@@ -84,14 +84,6 @@ const ProductPage = () => {
                                 unoptimized
                                 priority
                             />
-                            <div className="absolute top-6 right-6 flex flex-col gap-3">
-                                <button className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-brand-brown hover:bg-brand-brown hover:text-white transition-all shadow-lg active:scale-95">
-                                    <Heart size={18} />
-                                </button>
-                                <button className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-brand-brown hover:bg-brand-brown hover:text-white transition-all shadow-lg active:scale-95">
-                                    <Share2 size={18} />
-                                </button>
-                            </div>
 
                             <div className="absolute bottom-10 left-10">
                                 <span className="px-4 py-2 bg-brand-maroon text-white text-[9px] uppercase tracking-[0.3em] font-black rounded-full shadow-2xl">
