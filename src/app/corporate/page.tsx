@@ -18,7 +18,6 @@ const categories = [
     { id: "pen", label: "Premium Pens" },
     { id: "flask", label: "Flasks" },
     { id: "bag", label: "Bags" },
-    { id: "Promotional Gifts", label: "Promotional Gifts" },
 ];
 
 const features = [
@@ -35,14 +34,13 @@ export default function CorporatePage() {
 
     // Map the internal categories to the display labels/filters
     const filteredProducts = activeFilter === "all"
-        ? allProducts.filter(p => p.category === "Corporate Studio" || p.category === "Promotional Gifts")
+        ? allProducts.filter(p => p.category === "Corporate Studio")
         : allProducts.filter(p => {
-            if (activeFilter === "Promotional Gifts") return p.category === "Promotional Gifts";
-            if (activeFilter === "combo") return p.title.toLowerCase().includes("combo");
-            if (activeFilter === "handbook") return p.title.toLowerCase().includes("journal") || p.title.toLowerCase().includes("notebook") || p.title.toLowerCase().includes("diary");
+            if (activeFilter === "combo") return p.category === "Corporate Studio" && p.title.toLowerCase().includes("combo");
+            if (activeFilter === "handbook") return p.category === "Corporate Studio" && (p.title.toLowerCase().includes("journal") || p.title.toLowerCase().includes("notebook") || p.title.toLowerCase().includes("diary"));
             if (activeFilter === "pen") return p.category === "Corporate Studio" && p.title.toLowerCase().includes("pen");
-            if (activeFilter === "flask") return p.title.toLowerCase().includes("flask");
-            if (activeFilter === "bag") return p.title.toLowerCase().includes("bag");
+            if (activeFilter === "flask") return p.category === "Corporate Studio" && p.title.toLowerCase().includes("flask");
+            if (activeFilter === "bag") return p.category === "Corporate Studio" && p.title.toLowerCase().includes("bag");
             return false;
         });
 

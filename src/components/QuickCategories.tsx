@@ -19,7 +19,7 @@ const quickCategories = [
     {
         name: "Promotional Gifts",
         img: "/assets/images/categories/tshirts.jpg",
-        href: "/collections/custom"
+        href: "/collections/promotional"
     },
     {
         name: "T-Shirts",

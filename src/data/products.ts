@@ -130,4 +130,56 @@ export const allProducts: Product[] = [
         href: "/collections/promotional",
         tag: "Personalized"
     },
+
+    // Apparel & T-Shirts
+    {
+        id: "app-1",
+        title: "The Virtuous Onyx Tee",
+        subtitle: "Typography of Purpose",
+        description: "A statement of character rendered in high-contrast typography against a midnight onyx backdrop. Crafted for those who lead with humility and relentless drive. Made from 100% premium combed cotton.",
+        img: "/assets/images/apparel/black-humble-tee.jpg",
+        category: "Apparel & T-Shirts",
+        href: "/collections/apparel",
+        tag: "Motivational"
+    },
+    {
+        id: "app-2",
+        title: "The Urban Muse Sandbox Tee",
+        subtitle: "Illustrated Streetwear",
+        description: "An eclectic blend of street art and modern comfort, featuring a bespoke illustration of the contemporary creator. Its sandy beige hue offers a versatile canvas for bold, artistic expression.",
+        img: "/assets/images/apparel/beige-illustrated-tee.jpg",
+        category: "Apparel & T-Shirts",
+        href: "/collections/apparel",
+        tag: "Artistic"
+    },
+    {
+        id: "app-3",
+        title: "The Optimist's Sandstone Tee",
+        subtitle: "Minimalist Affirmation",
+        description: "A subtle yet powerful greeting for the world, combining minimalist 'HI' graphics with a gentle whisper of optimism. The sandstone palette brings a sense of calm and clarity to corporate casuals.",
+        img: "/assets/images/apparel/beige-hi-tee.jpg",
+        category: "Apparel & T-Shirts",
+        href: "/collections/apparel",
+        tag: "Minimalist"
+    },
+    {
+        id: "app-4",
+        title: "The Roadside Heritage Tee",
+        subtitle: "Sage Vintage Narrative",
+        description: "A Sage-washed canvas featuring a hauntingly beautiful vintage narrative of the open road. This piece captures the spirit of exploration and the timeless allure of heritage routes.",
+        img: "/assets/images/apparel/green-raven-tee.jpg",
+        category: "Apparel & T-Shirts",
+        href: "/collections/apparel",
+        tag: "Vintage"
+    },
+    {
+        id: "app-5",
+        title: "The Polar Precision Performance Hoodie",
+        subtitle: "Technical Arctic Layer",
+        description: "A masterclass in technical aesthetics, featuring stark polar white fabric accented by precision black details and high-visibility orange hardware. Engineered for a sleek, modern silhouette with moisture-wicking technology.",
+        img: "/assets/images/apparel/white-tech-hoodie.jpg",
+        category: "Apparel & T-Shirts",
+        href: "/collections/apparel",
+        tag: "Technical Edition"
+    },
 ];
