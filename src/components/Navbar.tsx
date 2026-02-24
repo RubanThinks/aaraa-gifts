@@ -54,13 +54,9 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
+        { name: "HOME", href: "/" },
         {
-            name: "WOMEN'S DAY GIFTS",
-            href: "/collections/womens-day",
-            sublinks: ["Signature Boxes", "Floral Hampers", "Wellness Kits", "Natural Soy Candles"]
-        },
-        {
-            name: "WEDDING RETURN GIFTS",
+            name: "RETURN GIFTS",
             href: "/collections/wedding",
             sublinks: ["Brass Artifacts", "Silver Platters", "Ethnic Hamper Sets", "Luxury Wedding Sweets"]
         },
