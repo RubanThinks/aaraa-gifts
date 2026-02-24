@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import { ArrowRight, Briefcase, Users, Laptop, Coffee, ChevronRight, ShoppingBag, Check } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { allProducts } from '@/data/products';
 
 const categories = [
     { id: "all", label: "All Products" },
@@ -17,38 +18,7 @@ const categories = [
     { id: "pen", label: "Premium Pens" },
     { id: "flask", label: "Flasks" },
     { id: "bag", label: "Bags" },
-    { id: "promo", label: "Promotional Gifts" },
-];
-
-const products = [
-    { id: "corp-1", title: "Executive Gift Combo", subtitle: "Branded combo set with pen, diary & bottle", img: "/assets/images/corporate/combo1.jpeg", category: "combo", tag: "Bestseller" },
-    { id: "corp-2", title: "Premium Desk Combo", subtitle: "Complete desk essentials gift set", img: "/assets/images/corporate/combo2.jpeg", category: "combo", tag: "Popular" },
-    { id: "corp-3", title: "Signature Combo Box", subtitle: "Curated corporate combo package", img: "/assets/images/corporate/combo3.jpeg", category: "combo" },
-    { id: "corp-4", title: "Deluxe Gift Combo", subtitle: "All-inclusive executive combo set", img: "/assets/images/corporate/combo4.jpeg", category: "combo" },
-    { id: "corp-5", title: "Classic Leather Journal Set", subtitle: "Premium leather-bound diary with branded pen", img: "/assets/images/corporate/handbook&pen1.jpeg", category: "handbook", tag: "Premium" },
-    { id: "corp-6", title: "Executive Notebook Duo", subtitle: "Soft-touch notebook paired with fine roller pen", img: "/assets/images/corporate/handbook&pen2.jpeg", category: "handbook" },
-    { id: "corp-7", title: "Heritage Journal Kit", subtitle: "Artisan stitched journal with gold-tip pen", img: "/assets/images/corporate/handbook&pen3.jpeg", category: "handbook" },
-    { id: "corp-8", title: "Boardroom Diary Set", subtitle: "Magnetic-close planner with engraved pen", img: "/assets/images/corporate/handbook&pen4.jpeg", category: "handbook" },
-    { id: "corp-9", title: "Compact Notes Set", subtitle: "Pocket journal with matching pen in gift box", img: "/assets/images/corporate/handbook&pen5.jpeg", category: "handbook" },
-    { id: "corp-10", title: "Luxe Planner Collection", subtitle: "Dated calendar planner with premium pen", img: "/assets/images/corporate/handbook&pen6.jpeg", category: "handbook", tag: "New" },
-    { id: "corp-11", title: "Midnight Edition Set", subtitle: "Black-on-black diary with matte pen", img: "/assets/images/corporate/handbook&pen7.jpeg", category: "handbook" },
-    { id: "corp-12", title: "Office Essentials Duo", subtitle: "Grid-ruled notebook with twist-action pen", img: "/assets/images/corporate/handbook&pen8.jpeg", category: "handbook" },
-    { id: "corp-13", title: "CEO Signature Series", subtitle: "Hand-bound leather journal with custom pen", img: "/assets/images/corporate/handbook&pen9.jpeg", category: "handbook", tag: "Exclusive" },
-    { id: "corp-14", title: "Slim Line Notes", subtitle: "Slim-profile journal with pen slot", img: "/assets/images/corporate/handbook&pen10.jpeg", category: "handbook" },
-    { id: "corp-15", title: "Founder's Journal Set", subtitle: "Premium hardcover with brass-tip pen", img: "/assets/images/corporate/handbook&pen11.jpeg", category: "handbook" },
-    { id: "corp-16", title: "Signature Brass Pen", subtitle: "Heavy-weight brass pen with gift case", img: "/assets/images/corporate/pen1.jpeg", category: "pen", tag: "Bestseller" },
-    { id: "corp-17", title: "Executive Roller Pen", subtitle: "Smooth-flow roller with metal body", img: "/assets/images/corporate/pen2.jpeg", category: "pen" },
-    { id: "corp-18", title: "Thermal Insulated Flask", subtitle: "Premium stainless steel with custom branding", img: "/assets/images/corporate/flask1.jpeg", category: "flask", tag: "Popular" },
-    { id: "corp-19", title: "Corporate Tote Bag", subtitle: "Premium fabric bag with branded finish", img: "/assets/images/corporate/bag1.jpeg", category: "bag" },
-    { id: "promo-1", title: "The Vanguard Cinematic Flask Set", subtitle: "Matte-finish steel duo with iconic graphics", img: "/assets/images/promotional/flask-mug.jpg", category: "promo", tag: "Cinematic Edition" },
-    { id: "promo-2", title: "The Heirloom Footprint Chronicle", subtitle: "Artisan wooden keepsake for newborns", img: "/assets/images/promotional/baby-keepsake.jpg", category: "promo", tag: "Handcrafted" },
-    { id: "promo-3", title: "The Healer's Signature Chalice", subtitle: "3D sculpted medical tribute mug", img: "/assets/images/promotional/doctor-mug.jpg", category: "promo", tag: "Professional Series" },
-    { id: "promo-4", title: "The Caduceus Desktop Prestige", subtitle: "Obsidian & Gold medical desk suite", img: "/assets/images/promotional/pen-stand.jpg", category: "promo", tag: "Executive" },
-    { id: "promo-5", title: "The Horizon Canvas Delegate Suite", subtitle: "Cohesive organic event package", img: "/assets/images/promotional/canvas-set.jpg", category: "promo", tag: "Bulk Ready" },
-    { id: "promo-6", title: "The Marauder's Bronze Chronicle", subtitle: "Artisan bronze-finish pirate talisman", img: "/assets/images/promotional/luffy-keyring.jpg", category: "promo", tag: "Limited Edition" },
-    { id: "promo-7", title: "The Sovereign Tuscan Portfolio", subtitle: "Top-grain leather executive organizer", img: "/assets/images/promotional/leather-organizer.jpg", category: "promo", tag: "Handcrafted" },
-    { id: "promo-8", title: "The Terra Organic Collective", subtitle: "Bamboo and organic fabric eco-suite", img: "/assets/images/promotional/eco-collective.jpg", category: "promo", tag: "Ecological" },
-    { id: "promo-9", title: "The Persona Bespoke Gallery", subtitle: "Custom illustrated professional caricatures", img: "/assets/images/promotional/avatar-mugs.jpg", category: "promo", tag: "Personalized" },
+    { id: "Promotional Gifts", label: "Promotional Gifts" },
 ];
 
 const features = [
@@ -63,9 +33,18 @@ export default function CorporatePage() {
     const [addedId, setAddedId] = useState<string | null>(null);
     const { addToCart } = useCart();
 
+    // Map the internal categories to the display labels/filters
     const filteredProducts = activeFilter === "all"
-        ? products
-        : products.filter(p => p.category === activeFilter);
+        ? allProducts.filter(p => p.category === "Corporate Studio" || p.category === "Promotional Gifts")
+        : allProducts.filter(p => {
+            if (activeFilter === "Promotional Gifts") return p.category === "Promotional Gifts";
+            if (activeFilter === "combo") return p.title.toLowerCase().includes("combo");
+            if (activeFilter === "handbook") return p.title.toLowerCase().includes("journal") || p.title.toLowerCase().includes("notebook") || p.title.toLowerCase().includes("diary");
+            if (activeFilter === "pen") return p.category === "Corporate Studio" && p.title.toLowerCase().includes("pen");
+            if (activeFilter === "flask") return p.title.toLowerCase().includes("flask");
+            if (activeFilter === "bag") return p.title.toLowerCase().includes("bag");
+            return false;
+        });
 
     const handleAddToCart = (product: any) => {
         addToCart({

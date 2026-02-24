@@ -92,15 +92,13 @@ const ProductPage = () => {
                             </div>
                         </div>
 
-                        {/* Thumbnail decoration */}
+                        {/* Secondary view if multiple images existed - currently showing single high-res view */}
                         <div className="grid grid-cols-4 gap-4 mt-8">
-                            {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="aspect-square rounded-2xl bg-white border border-brand-brown/5 overflow-hidden cursor-pointer hover:border-brand-gold transition-colors p-1">
-                                    <div className="relative w-full h-full rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all">
-                                        <Image src={product.img} alt={product.title} fill className="object-cover" unoptimized />
-                                    </div>
+                            <div className="aspect-square rounded-2xl bg-white border border-brand-gold overflow-hidden cursor-pointer p-1">
+                                <div className="relative w-full h-full rounded-xl overflow-hidden transition-all">
+                                    <Image src={product.img} alt={product.title} fill className="object-cover" unoptimized />
                                 </div>
-                            ))}
+                            </div>
                         </div>
                     </motion.div>
 
