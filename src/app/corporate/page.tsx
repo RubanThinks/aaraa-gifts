@@ -17,6 +17,7 @@ const categories = [
     { id: "pen", label: "Premium Pens" },
     { id: "flask", label: "Flasks" },
     { id: "bag", label: "Bags" },
+    { id: "promo", label: "Promotional Gifts" },
 ];
 
 const products = [
@@ -39,6 +40,15 @@ const products = [
     { id: "corp-17", title: "Executive Roller Pen", subtitle: "Smooth-flow roller with metal body", img: "/assets/images/corporate/pen2.jpeg", category: "pen" },
     { id: "corp-18", title: "Thermal Insulated Flask", subtitle: "Premium stainless steel with custom branding", img: "/assets/images/corporate/flask1.jpeg", category: "flask", tag: "Popular" },
     { id: "corp-19", title: "Corporate Tote Bag", subtitle: "Premium fabric bag with branded finish", img: "/assets/images/corporate/bag1.jpeg", category: "bag" },
+    { id: "promo-1", title: "The Vanguard Cinematic Flask Set", subtitle: "Matte-finish steel duo with iconic graphics", img: "/assets/images/promotional/flask-mug.jpg", category: "promo", tag: "Cinematic Edition" },
+    { id: "promo-2", title: "The Heirloom Footprint Chronicle", subtitle: "Artisan wooden keepsake for newborns", img: "/assets/images/promotional/baby-keepsake.jpg", category: "promo", tag: "Handcrafted" },
+    { id: "promo-3", title: "The Healer's Signature Chalice", subtitle: "3D sculpted medical tribute mug", img: "/assets/images/promotional/doctor-mug.jpg", category: "promo", tag: "Professional Series" },
+    { id: "promo-4", title: "The Caduceus Desktop Prestige", subtitle: "Obsidian & Gold medical desk suite", img: "/assets/images/promotional/pen-stand.jpg", category: "promo", tag: "Executive" },
+    { id: "promo-5", title: "The Horizon Canvas Delegate Suite", subtitle: "Cohesive organic event package", img: "/assets/images/promotional/canvas-set.jpg", category: "promo", tag: "Bulk Ready" },
+    { id: "promo-6", title: "The Marauder's Bronze Chronicle", subtitle: "Artisan bronze-finish pirate talisman", img: "/assets/images/promotional/luffy-keyring.jpg", category: "promo", tag: "Limited Edition" },
+    { id: "promo-7", title: "The Sovereign Tuscan Portfolio", subtitle: "Top-grain leather executive organizer", img: "/assets/images/promotional/leather-organizer.jpg", category: "promo", tag: "Handcrafted" },
+    { id: "promo-8", title: "The Terra Organic Collective", subtitle: "Bamboo and organic fabric eco-suite", img: "/assets/images/promotional/eco-collective.jpg", category: "promo", tag: "Ecological" },
+    { id: "promo-9", title: "The Persona Bespoke Gallery", subtitle: "Custom illustrated professional caricatures", img: "/assets/images/promotional/avatar-mugs.jpg", category: "promo", tag: "Personalized" },
 ];
 
 const features = [

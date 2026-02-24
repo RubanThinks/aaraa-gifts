@@ -120,7 +120,7 @@ const ProductPage = () => {
                                 </p>
                             )}
                             <p className="text-brand-espresso/40 text-base font-light leading-relaxed mb-10 max-w-xl">
-                                A testament to Aaraa's philosophy of purposeful gifting. This piece is meticulously crafted to bridge the gap between tradition and modern luxury, ensuring your gesture leaves a lasting impression on the soul.
+                                {product.description || "A testament to Aaraa's philosophy of purposeful gifting. This piece is meticulously crafted to bridge the gap between tradition and modern luxury, ensuring your gesture leaves a lasting impression on the soul."}
                             </p>
                         </div>
 
