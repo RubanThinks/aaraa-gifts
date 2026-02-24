@@ -264,4 +264,44 @@ export const allProducts: Product[] = [
         href: "/collections/awards",
         tag: "Artistic"
     },
+    {
+        id: "award-6",
+        title: "The Legacy Walnut 3D Portrait",
+        subtitle: "Dimensional Wood-Grain Monument",
+        description: "A revolutionary fusion of portraiture and sculpture. This 3D relief, carved into premium walnut-finished grain, immortalizes the visionary with unparalleled depth. Accented by neon-tech lighting for a modern masterpiece.",
+        img: "/assets/images/awards/wooden-portrait-3d.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Bespoke Series"
+    },
+    {
+        id: "award-7",
+        title: "The Sovereign Leather Key-Talisman",
+        subtitle: "Hand-Stitched Portrait Keepsake",
+        description: "A pocket-sized monument of identity. Crafted from top-grain tan leather with precision-illustrated portraiture, this talisman transforms the everyday accessory into a highly personalized badge of honor.",
+        img: "/assets/images/awards/leather-portrait-keyring.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Personalized"
+    },
+    {
+        id: "award-8",
+        title: "The Bronze Patron Bust",
+        subtitle: "Miniature Classical Commemoration",
+        description: "A classical tribute returned to the modern era. This miniature bust, finished in warm museum-grade bronze, captures the essence and character of leadership with artisan precision and timeless dignity.",
+        img: "/assets/images/awards/bronze-bust-award.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Limited Edition"
+    },
+    {
+        id: "award-9",
+        title: "The Gold-Leaf Striker's Accolade",
+        subtitle: "Reflective Acrylic Sports Monument",
+        description: "A high-octane celebration of victory. Featuring mirror-finish gold-leaf acrylic against a sleek obsidian backdrop, this monument captures the dynamic silhouette of the champion in full flight.",
+        img: "/assets/images/awards/gold-striker-award.jpg",
+        category: "Award Gifts",
+        href: "/collections/awards",
+        tag: "Sports Series"
+    },
 ];
